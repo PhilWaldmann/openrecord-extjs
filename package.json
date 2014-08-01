@@ -1,0 +1,17 @@
+{
+  "author": "Philipp Waldmann <philipp.waldmann@s-team.at>",
+  "name": "openrecord-extjs",
+  "description": "OpenRecord plugin for extjs",
+  "version": "1.0.0",
+  "keywords": ["openrecord", "extjs", "sencha"],
+  
+  "homepage": "https://github.com/PhilWaldmann/openrecord-extjs",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PhilWaldmann/openrecord-extjs.git"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "main": "./"
+}
