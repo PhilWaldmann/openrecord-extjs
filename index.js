@@ -70,8 +70,10 @@ exports.definition = {
           if(!params.filter[i].field || !params.filter[i].data) continue;
           var attribute = params.filter[i].field;
           var type = params.filter[i].data.type;
-          var comparison = params.filter[i].data.comparison || 'eq';
+          var comp_fallback = type == 'string' ? 'ilike' : 'eq';
+          var comparison = params.filter[i].data.comparison || comp_fallback;
           var value = params.filter[i].data.value;
+                    
           
           var tmp = attribute.split('.');
           if(tmp.length === 1){
