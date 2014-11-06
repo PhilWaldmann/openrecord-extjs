@@ -66,6 +66,8 @@ exports.definition = {
         var conditions = {};
         var attributes = this.definition.attributes;
 
+        if(params.filter && !(params.filter instanceof Array)) params.filter = [params.filter];
+
         for(var i = 0; i < params.filter.length; i++){
           if(!params.filter[i].field || !params.filter[i].data) continue;
           var attribute = params.filter[i].field;
@@ -97,12 +99,12 @@ exports.definition = {
             var found = false;
             attribute = tmp[tmp.length -1]
             
-            for(var i = 0; i < tmp.length - 1; i++){
-              var relation = model.definition.relations[tmp[i]];
+            for(var j = 0; j < tmp.length - 1; j++){
+              var relation = model.definition.relations[tmp[j]];
               if(relation && relation.model){
                 model = relation.model;
-                cond[tmp[i]] = {};
-                cond = cond[tmp[i]];
+                cond[tmp[j]] = {};
+                cond = cond[tmp[j]];
                 found = true;
               }else{
                 found = false;
